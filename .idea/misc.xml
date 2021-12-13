@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/senrysa/app/src/main/res/layout/activity_job_seeker_dashboard.xml" value="0.1796875" />
+        <entry key="..\:/senrysa/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/senrysa/app/src/main/res/layout/activity_recruiter_dashboard.xml" value="0.22" />
+        <entry key="..\:/senrysa/app/src/main/res/layout/activity_recruiter_login.xml" value="0.1796875" />
+        <entry key="..\:/senrysa/app/src/main/res/layout/activity_recruiter_registration_page.xml" value="0.1796875" />
+        <entry key="..\:/senrysa/app/src/main/res/layout/activity_registraion_as.xml" value="0.1796875" />
+        <entry key="..\:/senrysa/app/src/main/res/layout/job_post_form.xml" value="0.1796875" />
+        <entry key="..\:/senrysa/app/src/main/res/layout/single_job_post_recruiter_page.xml" value="0.22" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
