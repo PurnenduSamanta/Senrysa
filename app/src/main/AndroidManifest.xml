@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.purnendu.senrysa">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,33 +12,42 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Senrysa">
         <activity
-            android:name=".JobSeekerDashboard"
+            android:name=".AppliedCandidatesList"
             android:exported="false"
             android:screenOrientation="portrait"/>
         <activity
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
-            android:name=".RecruiterLoginActivity"
+            android:name=".Registration.JobSeekerRegistrationPage"
             android:exported="false"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".RecruiterDashboard"
+            android:name=".Dashboard.JobSeekerDashboard"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+          />
         <activity
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
-            android:name=".RegistrationAs"
+            android:name=".LoginActivity"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
         <activity
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
-            android:name=".RecruiterRegistrationPage"
+            android:name=".Dashboard.RecruiterDashboard"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+            android:name=".Registration.RegistrationAs"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+        <activity
+            android:name=".Registration.RecruiterRegistrationPage"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

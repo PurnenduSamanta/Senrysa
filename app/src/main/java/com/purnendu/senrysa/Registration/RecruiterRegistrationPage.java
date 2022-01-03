@@ -1,4 +1,4 @@
-package com.purnendu.senrysa;
+package com.purnendu.senrysa.Registration;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,7 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.purnendu.senrysa.DataBase.RecruiterRegistrationDb;
+import com.purnendu.senrysa.DataBase.Database;
+import com.purnendu.senrysa.MainActivity;
+import com.purnendu.senrysa.R;
 
 public class RecruiterRegistrationPage extends AppCompatActivity {
 
@@ -29,7 +31,7 @@ public class RecruiterRegistrationPage extends AppCompatActivity {
         RegisteredButton=findViewById(R.id.registered_button);
 
 
-        RecruiterRegistrationDb recruiterRegistrationDb=new RecruiterRegistrationDb(RecruiterRegistrationPage.this);
+        Database database =new Database(RecruiterRegistrationPage.this);
 
         //Doing Registration
         RegisteredButton.setOnClickListener(new View.OnClickListener() {
@@ -60,42 +62,21 @@ public class RecruiterRegistrationPage extends AppCompatActivity {
                     return;
                 }
 
+                if(database.isJobSeeker(email))
+                {
+                    Toast.makeText(RecruiterRegistrationPage.this, "You are a jobSeeker", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
-                Intent intent = getIntent();
-                // check intent is null or not
-                if(intent != null) {
-                    int type = intent.getIntExtra("type", 0);
 
-                    if (recruiterRegistrationDb.insertRecruiterDetails(name, password, email, type)) {
+                if (database.insertRecruiterDetails(name, password, email)) {
                         Toast.makeText(RecruiterRegistrationPage.this, "Successful", Toast.LENGTH_SHORT).show();
                         Intent i = new Intent(RecruiterRegistrationPage.this, MainActivity.class);
                         startActivity(i);
                     }
                     else
-                        Toast.makeText(RecruiterRegistrationPage.this, "UnSuccessful", Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
-                    Toast.makeText(RecruiterRegistrationPage.this, "intent is null", Toast.LENGTH_SHORT).show();
-                }
-
-
-
-
-
-
-
-
-
-
-
-
-
+                        Toast.makeText(RecruiterRegistrationPage.this, "Registration Failed", Toast.LENGTH_SHORT).show();
             }
         });
-
-
-
-
     }
 }

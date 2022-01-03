@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:id="@+id/single_card_dashboard"
     android:padding="5dp"
     app:cardCornerRadius="5dp"
     android:elevation="7dp">
@@ -11,7 +12,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangular_border">
 
 
         <TextView
@@ -29,19 +31,20 @@
             android:id="@+id/jdTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
             android:text="TextView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView6"
             app:layout_constraintTop_toBottomOf="@+id/jobTitleTextView" />
 
         <TextView
             android:id="@+id/ss1TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
             android:text="ss1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/ss2TextView"
             app:layout_constraintTop_toBottomOf="@+id/jdTextView" />
 
@@ -49,9 +52,9 @@
             android:id="@+id/ss2TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
             android:text="ss2"
-            app:layout_constraintEnd_toStartOf="@+id/ss1TextView"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/textView9"
             app:layout_constraintTop_toBottomOf="@+id/jdTextView" />
 
@@ -59,6 +62,7 @@
             android:id="@+id/departmentTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
             android:text="Department"
             app:layout_constraintEnd_toEndOf="parent"
@@ -70,6 +74,7 @@
             android:id="@+id/experienceTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
             android:text="Experience"
             app:layout_constraintEnd_toEndOf="parent"
@@ -80,6 +85,7 @@
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:text="Skills:"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/jdTextView" />
@@ -101,6 +107,15 @@
             android:text="Experience:"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Job Desc:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/jobTitleTextView" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

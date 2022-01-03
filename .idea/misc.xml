@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Androidproject/senrysa/app/src/main/res/drawable/rectangular_border.xml" value="0.1" />
+        <entry key="..\:/Androidproject/senrysa/app/src/main/res/layout/activity_applied_candidates_list.xml" value="0.1796875" />
+        <entry key="..\:/Androidproject/senrysa/app/src/main/res/layout/activity_job_seeker_dashboard.xml" value="0.22" />
+        <entry key="..\:/Androidproject/senrysa/app/src/main/res/layout/activity_job_seeker_registration_page.xml" value="0.16666666666666666" />
+        <entry key="..\:/Androidproject/senrysa/app/src/main/res/layout/activity_recruiter_registration_page.xml" value="0.1796875" />
+        <entry key="..\:/Androidproject/senrysa/app/src/main/res/layout/job_application_dialog.xml" value="0.1796875" />
+        <entry key="..\:/Androidproject/senrysa/app/src/main/res/layout/single_applied_candidate.xml" value="0.1796875" />
+        <entry key="..\:/Androidproject/senrysa/app/src/main/res/layout/single_job_post_recruiter_page.xml" value="0.22" />
         <entry key="..\:/senrysa/app/src/main/res/layout/activity_job_seeker_dashboard.xml" value="0.1796875" />
         <entry key="..\:/senrysa/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/senrysa/app/src/main/res/layout/activity_recruiter_dashboard.xml" value="0.22" />

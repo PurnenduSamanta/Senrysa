@@ -1,4 +1,4 @@
-package com.purnendu.senrysa;
+package com.purnendu.senrysa.Dashboard;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,10 +16,12 @@ import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.purnendu.senrysa.Adapter.JobShowAdapter;
-import com.purnendu.senrysa.DataBase.RecruiterRegistrationDb;
+import com.purnendu.senrysa.DataBase.Database;
 import com.purnendu.senrysa.Model.JobModel;
+import com.purnendu.senrysa.R;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class RecruiterDashboard extends AppCompatActivity {
 
@@ -35,15 +37,23 @@ public class RecruiterDashboard extends AppCompatActivity {
         createJobPost=findViewById(R.id.createJobPost_fab);
         allJobRecyclerView=findViewById(R.id.allJobRecyclerView);
 
-        RecruiterRegistrationDb db=new RecruiterRegistrationDb(RecruiterDashboard.this);
+        Database db=new Database(RecruiterDashboard.this);
         Intent intent = getIntent();
         // check intent is null or not
         if(intent != null) {
             String email = intent.getStringExtra("Recruiter Email");
+
+            String recruiterName=db.getRecruiterNameFromEmail(email);
+            if(recruiterName==null || recruiterName.isEmpty())
+                return;
+            Objects.requireNonNull(getSupportActionBar()).setTitle("hi "+recruiterName);
+            int recruiterId=db.getRecruiterIdFromEmail(email);
+            if(recruiterId==-1)
+                return;
             ArrayList<JobModel> jobList = db.getAllJobPost(email);
             if(!jobList.isEmpty())
             {
-                 adapter= new JobShowAdapter(this,jobList);
+                adapter= new JobShowAdapter(this,jobList,"RECRUITER DASHBOARD",recruiterId);
                 allJobRecyclerView.setAdapter(adapter);
                 allJobRecyclerView.setLayoutManager(new LinearLayoutManager(this));
             }
@@ -71,7 +81,6 @@ public class RecruiterDashboard extends AppCompatActivity {
                 View myView= inflater.inflate(R.layout.job_post_form,null);
                 alertDialog.setView(myView);
                 AlertDialog dialog=alertDialog.create();
-               // dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.show();
 
 
@@ -138,28 +147,26 @@ public class RecruiterDashboard extends AppCompatActivity {
 
                         Intent intent = getIntent();
                         // check intent is null or not
-                        if(intent != null){
-                            String email = intent.getStringExtra("Recruiter Email");
-                            if(db.insertJobDetails(email,jobTitle,jobDescription,skillSet1,skillSet2,department,Integer.parseInt(experience)))
-                            {
-                                Toast.makeText(RecruiterDashboard.this, "post created", Toast.LENGTH_SHORT).show();
-                                dialog.dismiss();
-                                recreate();
-
-                            }
-                            else
-                            {
-                                Toast.makeText(RecruiterDashboard.this, "Data not inserted", Toast.LENGTH_SHORT).show();
-                            }
-
-                        }
-                        else{
-                            Toast.makeText(RecruiterDashboard.this, "Recruiter Email Intent is null", Toast.LENGTH_SHORT).show();
+                        if(intent==null)
+                        return;
+                        String email = intent.getStringExtra("Recruiter Email");
+                        int recruiterId=db.getRecruiterIdFromEmail(email);
+                        if(recruiterId==-1)
+                        {
+                            Toast.makeText(RecruiterDashboard.this, "Recruiter id not found", Toast.LENGTH_SHORT).show();
+                            return;
                         }
 
-
-
-
+                        if(db.insertJobDetails(email,jobTitle,jobDescription,skillSet1,skillSet2,department,Integer.parseInt(experience),recruiterId))
+                        {
+                            Toast.makeText(RecruiterDashboard.this, "post created", Toast.LENGTH_SHORT).show();
+                            dialog.dismiss();
+                            recreate();
+                        }
+                        else
+                        {
+                            Toast.makeText(RecruiterDashboard.this, "Data not inserted", Toast.LENGTH_SHORT).show();
+                        }
 
 
                     }

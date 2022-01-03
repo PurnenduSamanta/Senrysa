@@ -1,4 +1,4 @@
-package com.purnendu.senrysa;
+package com.purnendu.senrysa.Registration;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.purnendu.senrysa.R;
 
 public class RegistrationAs extends AppCompatActivity {
 
@@ -23,8 +25,7 @@ public class RegistrationAs extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent=new Intent(RegistrationAs.this,RecruiterRegistrationPage.class);
-                intent.putExtra("type",1);
+                Intent intent=new Intent(RegistrationAs.this, RecruiterRegistrationPage.class);
                 startActivity(intent);
             }
         });
@@ -34,8 +35,7 @@ public class RegistrationAs extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent=new Intent(RegistrationAs.this,RecruiterRegistrationPage.class);
-                intent.putExtra("type",2);
+                Intent intent=new Intent(RegistrationAs.this,JobSeekerRegistrationPage.class);
                 startActivity(intent);
 
             }

@@ -3,6 +3,7 @@ package com.purnendu.senrysa.Model;
 public class JobModel {
 
 
+    private int jobId;
     private String email;
     private String title;
     private String jd;
@@ -11,7 +12,8 @@ public class JobModel {
     private String department;
     private int experience;
 
-    public JobModel(String email,String title, String jd, String ss1, String ss2, String department, int experience) {
+    public JobModel(int jobId,String email,String title, String jd, String ss1, String ss2, String department, int experience) {
+        this.jobId=jobId;
         this.email = email;
         this.title=title;
         this.jd = jd;
@@ -21,6 +23,14 @@ public class JobModel {
         this.experience = experience;
     }
 
+
+    public int getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(int jobId) {
+        this.jobId = jobId;
+    }
 
     public String getEmail() {
         return email;

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Registration.RecruiterRegistrationPage">
+    android:id="@+id/jobSeekerRegistrationPage"
+    tools:context=".Registration.JobSeekerRegistrationPage">
 
 
     <TextView
@@ -19,19 +20,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/name_editText"
+        android:id="@+id/jobSeekerName_editText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:ems="10"
         android:inputType="textPersonName"
-       android:hint="Name"
+        android:hint="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
-        android:id="@+id/password_editText"
+        android:id="@+id/jobSeekerPassword_editText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -40,10 +41,10 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_editText" />
+        app:layout_constraintTop_toBottomOf="@+id/jobSeekerName_editText" />
 
     <EditText
-        android:id="@+id/email_EditText"
+        android:id="@+id/jobSeekerEmail_EditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -52,10 +53,10 @@
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_editText" />
+        app:layout_constraintTop_toBottomOf="@+id/jobSeekerPassword_editText" />
 
     <Button
-        android:id="@+id/registered_button"
+        android:id="@+id/jobSeekerRegistered_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
@@ -65,5 +66,28 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/attachPdf"
+        android:layout_width="80sp"
+        android:layout_height="30sp"
+        android:background="@null"
+        app:layout_constraintBottom_toTopOf="@+id/jobSeekerRegistered_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jobSeekerEmail_EditText"
+        app:srcCompat="@drawable/ic_baseline_attachment_24" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-5dp"
+        android:text="Attach CV"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/attachPdf"
+        app:layout_constraintStart_toStartOf="@+id/attachPdf"
+        app:layout_constraintTop_toBottomOf="@+id/attachPdf" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".JobSeekerDashboard">
+    tools:context=".Dashboard.JobSeekerDashboard">
 
 
    <androidx.recyclerview.widget.RecyclerView
@@ -20,17 +20,11 @@
        android:layout_width="0sp"
        android:layout_height="wrap_content"
        android:ems="10"
-       android:hint="search job"
+       android:hint="search job with your skill"
        android:inputType="textPersonName"
-       app:layout_constraintEnd_toStartOf="@+id/searchImageView"
+       app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toTopOf="parent" />
 
-   <ImageView
-       android:id="@+id/searchImageView"
-       android:layout_width="50sp"
-       android:layout_height="50sp"
-       android:src="@drawable/ic_baseline_search_24"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintTop_toTopOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
